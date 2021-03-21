@@ -31,7 +31,6 @@ Repository of different database managment systems
    - Город наибольшим количеством кофейн.
    - Сколько видов кофе присутствует в меню
 
-
 ## Описание хранимых данных в БД.
   - Первая бд  
     
@@ -50,3 +49,5 @@ Repository of different database managment systems
     - Предназначение - хранение информации о пользователях и заказах.
   
       ![J700X16kZ5c](https://user-images.githubusercontent.com/57771719/111890159-eb261100-89f7-11eb-9e2e-1de4cdd20616.jpg)
+
+## Перечень основных операций
