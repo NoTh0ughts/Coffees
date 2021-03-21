@@ -51,6 +51,7 @@ Repository of different database managment systems
       ![J700X16kZ5c](https://user-images.githubusercontent.com/57771719/111890159-eb261100-89f7-11eb-9e2e-1de4cdd20616.jpg)
 
 ## Перечень основных операций
+![image](https://user-images.githubusercontent.com/57771719/111890448-786a6500-89fa-11eb-971e-5926f2a760cc.png)
 
 ## Trello
    https://trello.com/b/slfP0CKa
