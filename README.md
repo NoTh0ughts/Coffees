@@ -35,13 +35,13 @@ Repository of different database managment systems
 ## Описание хранимых данных в БД.
   - Предназначение - хранение информации о пользователях и заказах.
   
-  ![J700X16kZ5c](https://user-images.githubusercontent.com/57771719/111890159-eb261100-89f7-11eb-9e2e-1de4cdd20616.jpg)
+    ![J700X16kZ5c](https://user-images.githubusercontent.com/57771719/111890159-eb261100-89f7-11eb-9e2e-1de4cdd20616.jpg)
 
   
   - Предназначение - хранение информации о продуктах (информация о ингридиентах и пищевой ценности).
   
-  ![4IXVtJxQ_S8](https://user-images.githubusercontent.com/57771719/111890012-b1083f80-89f6-11eb-8638-b67668caaed8.jpg)
+    ![4IXVtJxQ_S8](https://user-images.githubusercontent.com/57771719/111890012-b1083f80-89f6-11eb-8638-b67668caaed8.jpg)
   
   - Предназначение - хранение информации о кофейнях и персонале
   
-  ![WwDcj4l_edo (1)](https://user-images.githubusercontent.com/57771719/111890171-06911c00-89f8-11eb-8c67-cfc7abc93f91.jpg)
+    ![WwDcj4l_edo (1)](https://user-images.githubusercontent.com/57771719/111890171-06911c00-89f8-11eb-8c67-cfc7abc93f91.jpg)
