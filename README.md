@@ -30,3 +30,14 @@ Repository of different database managment systems
    - Самый дешевый завтра.
    - Город наибольшим количеством кофейн.
    - Сколько видов кофе присутствует в меню
+
+
+# Описание хранимых данных в БД.
+  -
+  ![xlzmEizN0Ao](https://user-images.githubusercontent.com/57771719/111890007-a9489b00-89f6-11eb-93d7-23ae72fced12.jpg)
+  
+  ![wUfCrG6es3Y](https://user-images.githubusercontent.com/57771719/111890010-ad74b880-89f6-11eb-8be9-03afb0e4dbdb.jpg)
+  
+  ![4IXVtJxQ_S8](https://user-images.githubusercontent.com/57771719/111890012-b1083f80-89f6-11eb-8638-b67668caaed8.jpg)
+  
+  ![WwDcj4l_edo](https://user-images.githubusercontent.com/57771719/111890013-b5345d00-89f6-11eb-8e38-44c63ed9ac84.jpg)
