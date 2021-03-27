@@ -48,7 +48,7 @@ Repository of different database managment systems
   
     - Предназначение - хранение информации о пользователях и заказах.
   
-      ![J700X16kZ5c](https://user-images.githubusercontent.com/57771719/111890159-eb261100-89f7-11eb-9e2e-1de4cdd20616.jpg)
+      ![db_users_v2](https://user-images.githubusercontent.com/66141673/112721953-cd850a00-8f17-11eb-86e0-2c3db9cb4bc0.png)
 
 ## Перечень основных операций
 ![image](https://user-images.githubusercontent.com/57771719/111890448-786a6500-89fa-11eb-971e-5926f2a760cc.png)
