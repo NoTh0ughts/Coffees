@@ -36,7 +36,7 @@ Repository of different database managment systems
     
     - Предназначение - хранение информации о продуктах (информация о ингридиентах и пищевой ценности).
   
-      ![db_products_v3](https://user-images.githubusercontent.com/66141673/112900456-358c4980-90ec-11eb-8ece-ff67e5bc1375.png)
+      ![db_products_v3](https://user-images.githubusercontent.com/66141673/113016267-feb74180-9186-11eb-9878-94a6d98a7536.png)
   
   - Вторая бд
   
