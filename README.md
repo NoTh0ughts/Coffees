@@ -59,6 +59,9 @@ Repository of different database managment systems
 
 # Лабараторная №2
 ## Макеты приложения
-   ![app_account](https://user-images.githubusercontent.com/66141673/113520517-4598a300-959c-11eb-898f-d549e4631d47.png)
-   ![app_menu](https://user-images.githubusercontent.com/66141673/113520523-50533800-959c-11eb-8e6a-076cdc73900d.png)
+   ![app_account](https://user-images.githubusercontent.com/66141673/113520517-4598a300-959c-11eb-898f-d549e4631d47.png) | ![app_menu](https://user-images.githubusercontent.com/66141673/113520523-50533800-959c-11eb-8e6a-076cdc73900d.png)
+   |:--:|:--:|
+   
+   - PostgeSQL
+     ![image](https://user-images.githubusercontent.com/66141673/113521215-b346ce00-95a0-11eb-839c-9eaaf8db21b7.png)
 
