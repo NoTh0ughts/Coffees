@@ -63,5 +63,19 @@ Repository of different database managment systems
    |:--:|:--:|
    
    - PostgeSQL
-     ![image](https://user-images.githubusercontent.com/66141673/113521215-b346ce00-95a0-11eb-839c-9eaaf8db21b7.png)
+   
+     - БД кофеен
+     
+       ![image](https://user-images.githubusercontent.com/66141673/113521447-2bfa5a00-95a2-11eb-96f0-190a0a8b88fc.png)
+       ![image](https://user-images.githubusercontent.com/66141673/113521215-b346ce00-95a0-11eb-839c-9eaaf8db21b7.png)
+       
+
+   - MariaDB
+     
+     - БД товаров меню
+       
+       ![image](https://user-images.githubusercontent.com/66141673/113521561-f1dd8800-95a2-11eb-921a-6a8bd35e4774.png)
+       ![image](https://user-images.githubusercontent.com/66141673/113521568-f9049600-95a2-11eb-9791-c68234af4c26.png)
+
+   
 
