@@ -32,19 +32,19 @@ Repository of different database managment systems
    - Сколько видов кофе присутствует в меню
 
 ## Описание хранимых данных в БД.
-  - Первая бд  
+  - Первая бд (MS Sql Server, MariaDB)
     
     - Предназначение - хранение информации о продуктах (информация о ингридиентах и пищевой ценности).
   
       ![db_products_v3](https://user-images.githubusercontent.com/66141673/113042580-09cc9a80-91a4-11eb-8a69-3b64789a16fc.png)
   
-  - Вторая бд
+  - Вторая бд (PostgreSQL)
   
     - Предназначение - хранение информации о кофейнях и персонале
   
       ![WwDcj4l_edo (1)](https://user-images.githubusercontent.com/57771719/111890171-06911c00-89f8-11eb-8c67-cfc7abc93f91.jpg)
     
-  - Третья бд
+  - Третья бд (MongoDB)
   
     - Предназначение - хранение информации о пользователях и заказах.
   
@@ -55,3 +55,10 @@ Repository of different database managment systems
 
 ## Trello
    https://trello.com/b/slfP0CKa
+
+
+# Лабараторная №2
+## Макеты приложения
+   ![app_account](https://user-images.githubusercontent.com/66141673/113520517-4598a300-959c-11eb-898f-d549e4631d47.png)
+   ![app_menu](https://user-images.githubusercontent.com/66141673/113520523-50533800-959c-11eb-8e6a-076cdc73900d.png)
+
