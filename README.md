@@ -60,15 +60,7 @@ Repository of different database managment systems
 # Лабараторная №2
 ## Макеты приложения
    ![app_account](https://user-images.githubusercontent.com/66141673/113520517-4598a300-959c-11eb-898f-d549e4631d47.png) | ![app_menu](https://user-images.githubusercontent.com/66141673/113520523-50533800-959c-11eb-8e6a-076cdc73900d.png)
-   |:--:|:--:|
-   
-   - PostgeSQL
-   
-     - БД кофеен
-     
-       ![image](https://user-images.githubusercontent.com/66141673/113521447-2bfa5a00-95a2-11eb-96f0-190a0a8b88fc.png)
-       ![image](https://user-images.githubusercontent.com/66141673/113521215-b346ce00-95a0-11eb-839c-9eaaf8db21b7.png)
-       
+   |:--:|:--:|         
 
    - MariaDB
      
@@ -76,6 +68,16 @@ Repository of different database managment systems
        
        ![image](https://user-images.githubusercontent.com/66141673/113521561-f1dd8800-95a2-11eb-921a-6a8bd35e4774.png)
        ![image](https://user-images.githubusercontent.com/66141673/113521568-f9049600-95a2-11eb-9791-c68234af4c26.png)
+       
+   - PostgeSQL
+  
+     - БД кофеен
+  
+       ![image](https://user-images.githubusercontent.com/66141673/113521447-2bfa5a00-95a2-11eb-96f0-190a0a8b88fc.png)
+       ![image](https://user-images.githubusercontent.com/66141673/113521215-b346ce00-95a0-11eb-839c-9eaaf8db21b7.png) 
 
+   - MongoDB
    
-
+     - БД с пользователями
+     
+       ![image](https://user-images.githubusercontent.com/66141673/113521696-d32bc100-95a3-11eb-8e69-e2049ef3c9c1.png)
