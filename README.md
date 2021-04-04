@@ -70,6 +70,13 @@ Repository of different database managment systems
        ![image](https://user-images.githubusercontent.com/66141673/113521561-f1dd8800-95a2-11eb-921a-6a8bd35e4774.png)
        ![image](https://user-images.githubusercontent.com/66141673/113521568-f9049600-95a2-11eb-9791-c68234af4c26.png)
        
+   - MS Sql Server
+
+     - БД товаров меню
+     
+       ![image](https://user-images.githubusercontent.com/66141673/113524824-f3667a80-95b9-11eb-8b38-2e28c6ac6ce4.png)
+
+       
    - PostgeSQL
   
      - БД кофеен
