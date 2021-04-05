@@ -75,6 +75,7 @@ Repository of different database managment systems
      - БД товаров меню
      
        ![image](https://user-images.githubusercontent.com/66141673/113524824-f3667a80-95b9-11eb-8b38-2e28c6ac6ce4.png)
+       ![image](https://user-images.githubusercontent.com/75484601/113525036-4bea4780-95bb-11eb-8852-597017974961.png)  
 
        
    - PostgeSQL
