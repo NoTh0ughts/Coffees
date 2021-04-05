@@ -74,11 +74,9 @@ Repository of different database managment systems
 
      - БД товаров меню
      
+       ![image](https://user-images.githubusercontent.com/75484601/113525101-b69b8300-95bb-11eb-895f-32f3ec787e6e.png)
        ![image](https://user-images.githubusercontent.com/66141673/113524824-f3667a80-95b9-11eb-8b38-2e28c6ac6ce4.png)
-       ![image](https://user-images.githubusercontent.com/75484601/113525072-85bb4e00-95bb-11eb-9ae1-4f5bf469a062.png)
-
-
-       
+  
    - PostgeSQL
   
      - БД кофеен
