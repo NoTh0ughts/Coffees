@@ -59,8 +59,14 @@ Repository of different database managment systems
 
 # Лабараторная №2
 ## Макеты приложения
-   ![app_account](https://user-images.githubusercontent.com/66141673/113520517-4598a300-959c-11eb-898f-d549e4631d47.png) | ![app_menu](https://user-images.githubusercontent.com/66141673/113520523-50533800-959c-11eb-8e6a-076cdc73900d.png)
-   |:--:|:--:|         
+   <img src="https://user-images.githubusercontent.com/66141673/115174398-db224f80-a0d1-11eb-8fc0-c1e2da710f10.png" width="50%"></img><img src="https://user-images.githubusercontent.com/66141673/115174425-e2e1f400-a0d1-11eb-86d1-bbca3bead42b.png" width="50%"></img><img src="https://user-images.githubusercontent.com/66141673/115174439-e8d7d500-a0d1-11eb-9fd4-8587371a0cdd.png" width="50%"></img><img src="https://user-images.githubusercontent.com/66141673/115174464-f42b0080-a0d1-11eb-8aca-3e2d01a6b8ed.png" width="50%"></img><img src="https://user-images.githubusercontent.com/66141673/115174479-fb520e80-a0d1-11eb-9640-ff5c9f3d23fc.png" width="50%"></img><img src="https://user-images.githubusercontent.com/66141673/115174488-00af5900-a0d2-11eb-82a7-db6206ce6896.png" width="50%"></img>
+
+   
+
+
+
+
+
 
 ## Схемы и примеры заполнения бд
    - MariaDB
