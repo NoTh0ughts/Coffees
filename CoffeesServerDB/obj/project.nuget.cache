@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/ukCGOKkPZhvkZAf/w/cnxWPmiXz+J39nbR9OIYDVqq3wSs4DfQmnBd0l/lqZk82eYPDhy3paDX438MHFktnVQ==",
+  "dgSpecHash": "vjGAcQLIvGXNiTipvF5sC4/OzGoi6bc9ACAvEq2tZwTRXa0wHU6+CtFdTySJTAs9yOYiyygrIAeZPhXkONvyEg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hello\\source\\repos\\CoffeesServerDB\\CoffeesServerDB\\CoffeesServerDB.csproj",
+  "projectFilePath": "C:\\Users\\Hello\\source\\repos\\Coffees\\CoffeesServerDB\\CoffeesServerDB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hello\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\Hello\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",

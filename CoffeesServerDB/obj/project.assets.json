@@ -868,11 +868,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hello\\source\\repos\\CoffeesServerDB\\CoffeesServerDB\\CoffeesServerDB.csproj",
+      "projectUniqueName": "C:\\Users\\Hello\\source\\repos\\Coffees\\CoffeesServerDB\\CoffeesServerDB.csproj",
       "projectName": "CoffeesServerDB",
-      "projectPath": "C:\\Users\\Hello\\source\\repos\\CoffeesServerDB\\CoffeesServerDB\\CoffeesServerDB.csproj",
+      "projectPath": "C:\\Users\\Hello\\source\\repos\\Coffees\\CoffeesServerDB\\CoffeesServerDB.csproj",
       "packagesPath": "C:\\Users\\Hello\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hello\\source\\repos\\CoffeesServerDB\\CoffeesServerDB\\obj\\",
+      "outputPath": "C:\\Users\\Hello\\source\\repos\\Coffees\\CoffeesServerDB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet"
