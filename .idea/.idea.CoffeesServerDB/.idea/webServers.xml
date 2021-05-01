@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="00b75f25-56b2-4c69-8a7c-f9b4f91e94aa" name="srv">
+        <fileTransfer rootFolder="/home/blockares" accessType="SFTP" host="web-schedule.zapto.org" port="3389" sshConfigId="6d386e3b-2d8e-4cf2-9aee-ffaefd5be850" sshConfig="blockares@web-schedule.zapto.org:3389 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

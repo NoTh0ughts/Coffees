@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CoffeesServerDB": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}
