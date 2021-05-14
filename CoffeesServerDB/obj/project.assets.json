@@ -55,18 +55,6 @@
           "lib/netstandard2.0/Blueshift.EntityFrameworkCore.MongoDB.dll": {}
         }
       },
-      "JetBrains.Annotations/11.1.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.1.0"
-        },
-        "compile": {
-          "lib/netstandard1.0/JetBrains.Annotations.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.0/JetBrains.Annotations.dll": {}
-        }
-      },
       "MAVN.Persistence.EntityFrameworkCore.Configuration/3.2.0": {
         "type": "package",
         "dependencies": {
@@ -544,7 +532,7 @@
           }
         }
       },
-      "MySqlConnector/1.3.3": {
+      "MySqlConnector/1.3.8": {
         "type": "package",
         "compile": {
           "lib/net5.0/MySqlConnector.dll": {}
@@ -587,6 +575,20 @@
         },
         "runtime": {
           "lib/netstandard2.1/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {}
+        }
+      },
+      "Pomelo.EntityFrameworkCore.MySql/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "[5.0.5, 6.0.0)",
+          "Microsoft.Extensions.DependencyInjection": "5.0.1",
+          "MySqlConnector": "1.3.7"
+        },
+        "compile": {
+          "lib/netstandard2.1/Pomelo.EntityFrameworkCore.MySql.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Pomelo.EntityFrameworkCore.MySql.dll": {}
         }
       },
       "runtime.native.System/4.3.0": {
@@ -1621,20 +1623,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "Wangkanai.EntityFrameworkCore.MariaDB/0.0.5": {
-        "type": "package",
-        "dependencies": {
-          "JetBrains.Annotations": "11.1.0",
-          "Microsoft.EntityFrameworkCore.Abstractions": "2.1.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.1.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Wangkanai.EntityFrameworkCore.MariaDB.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Wangkanai.EntityFrameworkCore.MariaDB.dll": {}
-        }
       }
     }
   },
@@ -1701,26 +1689,6 @@
         "iframework.entityframeworkcore.blueshift.mongodb.nuspec",
         "lib/netstandard2.0/Blueshift.EntityFrameworkCore.MongoDB.dll",
         "lib/netstandard2.0/Blueshift.EntityFrameworkCore.MongoDB.xml"
-      ]
-    },
-    "JetBrains.Annotations/11.1.0": {
-      "sha512": "umU4AjekbwDeUaAmzThW9m2e1u1VYL2WAcp85CnyI7QDl9EFI547dh9XRKb8ogY+1uGLxOOksQu1T+ADkQOccA==",
-      "type": "package",
-      "path": "jetbrains.annotations/11.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "jetbrains.annotations.11.1.0.nupkg.sha512",
-        "jetbrains.annotations.nuspec",
-        "lib/net20/JetBrains.Annotations.dll",
-        "lib/net20/JetBrains.Annotations.xml",
-        "lib/netstandard1.0/JetBrains.Annotations.deps.json",
-        "lib/netstandard1.0/JetBrains.Annotations.dll",
-        "lib/netstandard1.0/JetBrains.Annotations.xml",
-        "lib/portable40-net40+sl4+win8+wp7/JetBrains.Annotations.dll",
-        "lib/portable40-net40+sl4+win8+wp7/JetBrains.Annotations.xml",
-        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.dll",
-        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.xml"
       ]
     },
     "MAVN.Persistence.EntityFrameworkCore.Configuration/3.2.0": {
@@ -2472,13 +2440,14 @@
         "runtimes/win/native/mongocrypt.dll"
       ]
     },
-    "MySqlConnector/1.3.3": {
-      "sha512": "G6Ro+inHcUyD6e4M1CCF6ha6tqUQsbKGMnF47YsShNnNqERab5MR877zLV25ywRst/pbENgzCMV7tnaYr+jptQ==",
+    "MySqlConnector/1.3.8": {
+      "sha512": "zxE+MDrpfPLEUvkUR73brSLiWwDtp5yoNmEk5vEj0vzoVJmR2lBJcOPowigbkR305lM2IKgCL8TP1iIC9xSi7A==",
       "type": "package",
-      "path": "mysqlconnector/1.3.3",
+      "path": "mysqlconnector/1.3.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "README.md",
         "lib/net45/MySqlConnector.dll",
         "lib/net45/MySqlConnector.xml",
         "lib/net461/MySqlConnector.dll",
@@ -2498,7 +2467,7 @@
         "lib/netstandard2.1/MySqlConnector.dll",
         "lib/netstandard2.1/MySqlConnector.xml",
         "logo.png",
-        "mysqlconnector.1.3.3.nupkg.sha512",
+        "mysqlconnector.1.3.8.nupkg.sha512",
         "mysqlconnector.nuspec"
       ]
     },
@@ -2564,6 +2533,20 @@
         "npgsql.entityframeworkcore.postgresql.5.0.5.1.nupkg.sha512",
         "npgsql.entityframeworkcore.postgresql.nuspec",
         "postgresql.png"
+      ]
+    },
+    "Pomelo.EntityFrameworkCore.MySql/5.0.0": {
+      "sha512": "5T1c5sjnzhryUwD647l209Fsvhfzu1R5vS9G26HuT6T8tEtli9xTBJInge+17Cqy2Q2XTYug+vVfTk3gNH5Zjw==",
+      "type": "package",
+      "path": "pomelo.entityframeworkcore.mysql/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "icon.png",
+        "lib/netstandard2.1/Pomelo.EntityFrameworkCore.MySql.dll",
+        "lib/netstandard2.1/Pomelo.EntityFrameworkCore.MySql.xml",
+        "pomelo.entityframeworkcore.mysql.5.0.0.nupkg.sha512",
+        "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
     "runtime.native.System/4.3.0": {
@@ -5876,18 +5859,6 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
-    },
-    "Wangkanai.EntityFrameworkCore.MariaDB/0.0.5": {
-      "sha512": "5vU+sHfwHIxJq2VhTYdQVULahF2rK4tzlRh7WAK1y3+6oHld2SdUjgtOkNTOAeE91k9Vx6VGjZUllDRsR34WEg==",
-      "type": "package",
-      "path": "wangkanai.entityframeworkcore.mariadb/0.0.5",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Wangkanai.EntityFrameworkCore.MariaDB.dll",
-        "wangkanai.entityframeworkcore.mariadb.0.0.5.nupkg.sha512",
-        "wangkanai.entityframeworkcore.mariadb.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -5899,10 +5870,10 @@
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.6",
       "MongoDB.Driver >= 2.12.2",
       "MongoDB.EntityFramework >= 0.0.13",
-      "MySqlConnector >= 1.3.3",
+      "MySqlConnector >= 1.3.8",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 5.0.5.1",
-      "Swashbuckle.AspNetCore >= 6.1.4",
-      "Wangkanai.EntityFrameworkCore.MariaDB >= 0.0.5"
+      "Pomelo.EntityFrameworkCore.MySql >= 5.0.0",
+      "Swashbuckle.AspNetCore >= 6.1.4"
     ]
   },
   "packageFolders": {
@@ -5983,19 +5954,19 @@
           },
           "MySqlConnector": {
             "target": "Package",
-            "version": "[1.3.3, )"
+            "version": "[1.3.8, )"
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
             "version": "[5.0.5.1, )"
           },
+          "Pomelo.EntityFrameworkCore.MySql": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[6.1.4, )"
-          },
-          "Wangkanai.EntityFrameworkCore.MariaDB": {
-            "target": "Package",
-            "version": "[0.0.5, )"
           }
         },
         "imports": [

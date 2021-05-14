@@ -80,9 +80,6 @@ C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\Cof
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\ref\CoffeesServerDB.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\CoffeesServerDB.pdb
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\DnsClient.dll
-C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\IFramework.dll
-C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\Blueshift.EntityFrameworkCore.MongoDB.dll
-C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\JetBrains.Annotations.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\MAVN.Persistence.EntityFrameworkCore.Configuration.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\MAVN.Persistence.EntityFrameworkCore.MsSql.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
@@ -110,7 +107,6 @@ C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\Sys
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\System.Runtime.Caching.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\Wangkanai.EntityFrameworkCore.MariaDB.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
@@ -137,3 +133,6 @@ C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\obj\Debug\net5.0\Cof
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\obj\Debug\net5.0\CoffeesServerDB.genruntimeconfig.cache
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\Humanizer.dll
 C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\IFramework.dll
+C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\Blueshift.EntityFrameworkCore.MongoDB.dll
+C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll

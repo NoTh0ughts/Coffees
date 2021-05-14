@@ -2,9 +2,9 @@
 
 namespace CoffeesServerDB.DataBase.Entity.Products
 {
-    public class Subcategory : BaseEntity
+    [Obsolete("Not used any more", true)]
+    public class Component : BaseEntity
     {
         public string Name { get; set; }
-        public Guid Category_id { get; set; }
     }
 }

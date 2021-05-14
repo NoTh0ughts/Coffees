@@ -12,8 +12,7 @@ namespace CoffeesServerDB
     {
         public static void Main(string[] args)
         {
-            var root = Directory.GetCurrentDirectory();
-            var dotenv = Path.Combine(root, ".env");
+            var dotenv = Path.Combine(@"C:\Users\Hello\source\repos\CoffeesServerDB\CoffeesServerDB\", ".env");
             ConfigLoader.Load(dotenv);
 
             CreateHostBuilder(args)

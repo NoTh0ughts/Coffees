@@ -1,7 +1,10 @@
 ﻿using System;
 using CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated;
+using CoffeesServerDB.DataBase.Entity.Products;
+using CoffeesServerDB.DataBase.Entity.UserStuff;
 using CoffeesServerDB.DataBase.Repositoryes;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -45,12 +48,12 @@ namespace CoffeesServerDB.Service
             services.AddScoped<CoffeesRepository>();
             services.AddScoped<coffees_cafesContext>();
             
-            
+
             //Mongo
-           // services.AddEntityFrameworkMongoDb()
-           //     .AddDbContext<UserContext>(options => options.UseMongoDb(ConfigLoader.MongoURL));
-           // services.AddScoped<UserRepository>();
-           // services.AddScoped<UserContext>();
+            //services.AddEntityFrameworkMongoDb()
+            //    .AddDbContext<UserContext>(options => options.UseMongoDb(ConfigLoader.MongoURL));
+            //services.AddScoped<UserRepository>();
+            //services.AddScoped<UserContext>();
           
             ////Mssql
             //services.AddEntityFrameworkSqlServer()
@@ -58,11 +61,14 @@ namespace CoffeesServerDB.Service
             //services.AddScoped<ProductContext>();
             //services.AddScoped<ProductRepository>();
             //
-            ////Maria
-            //services.AddEntityFrameworkMariaServer()
-            //    .AddDbContext<ProductContext>(options => options.UseMariaServer(ConfigLoader.MariaURL));
-            //services.AddScoped<ProductContext>();
-            //services.AddScoped<ProductContext>();
+            //Maria
+            
+            services.AddEntityFrameworkMySql()
+                .AddDbContext<ProductContext>(options => options.UseMySql(ConfigLoader.MariaURL,
+                    ServerVersion.AutoDetect(ConfigLoader.MariaURL)));
+            
+            services.AddScoped<ProductContext>();
+            services.AddScoped<ProductContext>();
 
 
         }

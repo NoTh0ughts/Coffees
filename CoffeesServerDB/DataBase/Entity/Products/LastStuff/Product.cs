@@ -2,6 +2,7 @@
 
 namespace CoffeesServerDB.DataBase.Entity.Products
 {
+    [Obsolete("Not used any more", true)]
     public class Product : BaseEntity
     {
         public string Name { get; set; }
