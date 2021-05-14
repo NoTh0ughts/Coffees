@@ -1,24 +1,28 @@
-﻿using System.IO;
-
+﻿using System;
+using System.IO;
+using System.Linq;
+using CoffeesServerDB.Service;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 
 namespace CoffeesServerDB
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var root = Directory.GetCurrentDirectory();
             var dotenv = Path.Combine(root, ".env");
             ConfigLoader.Load(dotenv);
 
-            
-            //MongoDb Init
-            var atlas = ConfigLoader.ConfigureURLMongoDBFromEnviroment();
-            MongoDbConnection.Instanse.Initialize(atlas);
-
-            
-            //MariaDb Init
-            MariaDBConnection.MariaDbConnection.Execute("select * from category");
+            CreateHostBuilder(args)
+                .Build()
+                .Run();
         }
+
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
     }
 }

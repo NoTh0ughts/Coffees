@@ -1,7 +1,8 @@
 ﻿using System;
+using CoffeesServerDB.Service;
 using MySqlConnector;
 
-namespace CoffeesServerDB
+namespace CoffeesServerDB.DataBase.Connections
 {
     public class MariaDBConnection
     {
@@ -14,7 +15,7 @@ namespace CoffeesServerDB
 
         public void Execute(string request)
         {
-            var config = ConfigLoader.ConfigureURLMariaDBFromEnviroment();
+            var config = ConfigLoader.MariaURL;
             
             using var connection = new MySqlConnection(config);
             using var command = new MySqlCommand(request, connection);

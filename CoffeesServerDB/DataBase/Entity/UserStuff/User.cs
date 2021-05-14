@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CoffeesServerDB.Entity.UserStuff
+namespace CoffeesServerDB.DataBase.Entity.UserStuff
 {
     public class User : BaseEntity
     {

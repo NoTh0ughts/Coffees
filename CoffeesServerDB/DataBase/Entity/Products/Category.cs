@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CoffeesServerDB.Entity
+namespace CoffeesServerDB.DataBase.Entity.Products
 {
     public class Category : BaseEntity
     {

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace CoffeesServerDB.Entity
+namespace CoffeesServerDB.DataBase.Entity
 {
     public abstract class BaseEntity
     {
-        public Guid Id { get; set; }
+        [Key]
+        public int Id { get; set; }
     }
 }

@@ -1,6 +1,7 @@
-﻿using MongoDB.Driver;
+﻿using CoffeesServerDB.Service;
+using MongoDB.Driver;
 
-namespace CoffeesServerDB
+namespace CoffeesServerDB.DataBase.Connections
 {
     class MongoDbConnection 
     {
@@ -17,7 +18,7 @@ namespace CoffeesServerDB
         private static MongoDbConnection _instance;
         private MongoClient _mongoClient;
         private bool _isInitialized = false;
-
+    
 
         public void Initialize(string atlasStr)
         {
