@@ -5878,7 +5878,7 @@
   },
   "packageFolders": {
     "C:\\Users\\Hello\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
@@ -5890,7 +5890,7 @@
       "outputPath": "C:\\Users\\Hello\\source\\repos\\CoffeesServerDB\\CoffeesServerDB\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet"
       ],
       "configFilePaths": [
         "C:\\Users\\Hello\\AppData\\Roaming\\NuGet\\NuGet.Config",

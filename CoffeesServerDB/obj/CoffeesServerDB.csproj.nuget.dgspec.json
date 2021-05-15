@@ -14,7 +14,7 @@
         "outputPath": "C:\\Users\\Hello\\source\\repos\\CoffeesServerDB\\CoffeesServerDB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet"
         ],
         "configFilePaths": [
           "C:\\Users\\Hello\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -64,12 +64,12 @@ namespace CoffeesServerDB.Service
             //Maria
             
             services.AddEntityFrameworkMySql()
-                .AddDbContext<ProductContext>(options => options.UseMySql(ConfigLoader.MariaURL,
+                .AddDbContext<databaseContext>(options => options.UseMySql(ConfigLoader.MariaURL,
                     ServerVersion.AutoDetect(ConfigLoader.MariaURL)));
             
-            services.AddScoped<ProductContext>();
-            services.AddScoped<ProductContext>();
+            services.AddScoped<databaseContext>();
 
+            
 
         }
 

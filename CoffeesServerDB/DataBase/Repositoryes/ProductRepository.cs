@@ -7,41 +7,42 @@ using CoffeesServerDB.DataBase.Entity.Products;
 
 namespace CoffeesServerDB.DataBase.Repositoryes
 {
-    public class ProductRepository : IRepository<ProductContext>
+    public class ProductRepository : IRepository<databaseContext>
     {
-        public ProductContext Context;
-        
+        public databaseContext Context;
+
+
         public void Dispose()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ProductContext> GetItemList()
+        public IEnumerable<databaseContext> GetItemList()
         {
             throw new NotImplementedException();
         }
 
-        public ProductContext GetItemById()
+        public databaseContext GetItemById()
         {
             throw new NotImplementedException();
         }
 
-        public ProductContext Get(Expression<Func<ProductContext, bool>> filter = null, Func<IQueryable<ProductContext>, IOrderedQueryable<ProductContext>> orderBy = null, string includeProperties = "")
+        public databaseContext Get(Expression<Func<databaseContext, bool>> filter = null, Func<IQueryable<databaseContext>, IOrderedQueryable<databaseContext>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
         }
 
-        public void Create(ProductContext item)
+        public void Create(databaseContext item)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(ProductContext item)
+        public void Update(databaseContext item)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(ProductContext item)
+        public void Delete(databaseContext item)
         {
             throw new NotImplementedException();
         }
