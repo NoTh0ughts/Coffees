@@ -18,6 +18,7 @@ namespace CoffeesServerDB
             CreateHostBuilder(args)
                 .Build()
                 .Run();
+	    Console.WriteLine("stopped");
         }
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>
