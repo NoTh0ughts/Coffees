@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CoffeesServerDB.Service;
+using Microsoft.EntityFrameworkCore;
 
 #nullable disable
 
@@ -29,8 +30,7 @@ namespace CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseNpgsql("Host=192.168.231.3;Database=coffees_cafes;Username=postgres;Password=ThisIsIVT361");
+                optionsBuilder.UseNpgsql(ConfigLoader.PostgresUrl);
             }
         }
 

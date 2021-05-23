@@ -1,6 +1,5 @@
-﻿using System;
+﻿using CoffeesServerDB.Service;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -30,8 +29,8 @@ namespace CoffeesServerDB
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=192.168.231.3;port=3306;user id=root;password=ThisIsIVT361;database=database;treattinyasboolean=true", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.5.9-mariadb"));
+                optionsBuilder.UseMySql(ConfigLoader.MariaURL + "treattinyasboolean=true",
+                    ServerVersion.Parse("10.5.9-mariadb"));
             }
         }
 

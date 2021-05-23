@@ -1,10 +1,7 @@
 ﻿using System;
 using CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated;
-using CoffeesServerDB.DataBase.Entity.Products;
-using CoffeesServerDB.DataBase.Entity.UserStuff;
 using CoffeesServerDB.DataBase.Repositoryes;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -41,7 +38,7 @@ namespace CoffeesServerDB.Service
                         }
                     });
             });
-            
+
             //Postgres
             services.AddEntityFrameworkNpgsql()
                 .AddDbContext<coffees_cafesContext>(options => options.UseNpgsql(ConfigLoader.PostgresUrl));
@@ -60,17 +57,15 @@ namespace CoffeesServerDB.Service
             //    .AddDbContext<ProductContext>(options => options.UseSqlServer(ConfigLoader.MssqlUrl));
             //services.AddScoped<ProductContext>();
             //services.AddScoped<ProductRepository>();
-            //
-            //Maria
             
+            
+            
+            //Maria
             services.AddEntityFrameworkMySql()
                 .AddDbContext<databaseContext>(options => options.UseMySql(ConfigLoader.MariaURL,
                     ServerVersion.AutoDetect(ConfigLoader.MariaURL)));
             
             services.AddScoped<databaseContext>();
-
-            
-
         }
 
       
