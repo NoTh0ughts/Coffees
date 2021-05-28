@@ -1,5 +1,8 @@
 ﻿using System;
 using CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated;
+using CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated;
+using CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated;
+using CoffeesServerDB.DataBase.Entity.UserStuff;
 using CoffeesServerDB.DataBase.Repositoryes;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 
 namespace CoffeesServerDB.Service
@@ -39,24 +43,22 @@ namespace CoffeesServerDB.Service
                     });
             });
 
+            //Mongo
+            services.Configure<MongoConfig>(Configuration.GetSection(nameof(MongoConfig)));
+            services.AddSingleton<IMongoConfig>(isp => isp.GetRequiredService<IOptions<MongoConfig>>().Value);
+            services.AddSingleton<UserService>();
+            
             //Postgres
             services.AddEntityFrameworkNpgsql()
                 .AddDbContext<coffees_cafesContext>(options => options.UseNpgsql(ConfigLoader.PostgresUrl));
             services.AddScoped<CoffeesRepository>();
             services.AddScoped<coffees_cafesContext>();
             
-
-            //Mongo
-            //services.AddEntityFrameworkMongoDb()
-            //    .AddDbContext<UserContext>(options => options.UseMongoDb(ConfigLoader.MongoURL));
-            //services.AddScoped<UserRepository>();
-            //services.AddScoped<UserContext>();
-          
-            ////Mssql
-            //services.AddEntityFrameworkSqlServer()
-            //    .AddDbContext<ProductContext>(options => options.UseSqlServer(ConfigLoader.MssqlUrl));
-            //services.AddScoped<ProductContext>();
-            //services.AddScoped<ProductRepository>();
+            //Mssql
+            services.AddEntityFrameworkSqlServer()
+                .AddDbContext<coffeeContext>(options => options.UseSqlServer(ConfigLoader.MssqlUrl));
+            services.AddScoped<coffeeContext>();
+            services.AddScoped<ProductRepository>();
             
             
             

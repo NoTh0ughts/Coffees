@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using CoffeesServerDB.DataBase.Entity.Products;
+using CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated;
 
 namespace CoffeesServerDB.DataBase.Repositoryes
 {

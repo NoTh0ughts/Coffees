@@ -1,7 +1,10 @@
-﻿namespace CoffeesServerDB.DataBase.Entity.UserStuff
+﻿using MongoDB.Bson.Serialization.Attributes;
+
+namespace CoffeesServerDB.DataBase.Entity.UserStuff
 {
-    public class Status : BaseEntity
+    public class Status : BaseEntityMongo
     {
+        [BsonElement("status")]
         public string Title { get; set; }
     }
 }

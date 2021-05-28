@@ -1,7 +1,10 @@
-﻿namespace CoffeesServerDB.DataBase.Entity.UserStuff
+﻿using MongoDB.Bson.Serialization.Attributes;
+
+namespace CoffeesServerDB.DataBase.Entity.UserStuff
 {
-    public class Card : BaseEntity
+    public class Card : BaseEntityMongo
     {
+        [BsonElement("discount")]
         public int Discount { get; set; }
     }
 }
