@@ -20,7 +20,7 @@ namespace CoffeesServerDB.DataBase.Controllers
         [HttpGet("get_brands")]
         public IEnumerable<Brand> Get()
         {
-            using var ctx = new coffees_cafesContext();
+            using var ctx = new CafeContext();
                 return ctx.Brands.ToList();
         }
     }

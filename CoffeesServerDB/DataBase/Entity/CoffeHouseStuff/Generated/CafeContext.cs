@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated
 {
-    public partial class coffees_cafesContext : DbContext
+    public partial class CafeContext : DbContext
     {
-        public coffees_cafesContext()
+        public CafeContext()
         {
         }
 
-        public coffees_cafesContext(DbContextOptions<coffees_cafesContext> options)
+        public CafeContext(DbContextOptions<CafeContext> options)
             : base(options)
         {
         }

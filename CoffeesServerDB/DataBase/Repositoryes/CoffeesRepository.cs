@@ -9,42 +9,42 @@ namespace CoffeesServerDB.DataBase.Repositoryes
 {
     public class CoffeesRepository 
     {
-        public coffees_cafesContext Context;
+        public CafeContext Context;
 
         public void Dispose()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<coffees_cafesContext> GetItemList()
+        public IEnumerable<CafeContext> GetItemList()
         {
             throw new NotImplementedException();
         }
 
-        public coffees_cafesContext GetItemById()
+        public CafeContext GetItemById()
         {
             throw new NotImplementedException();
         }
 
-        public coffees_cafesContext Get(
-            Expression<Func<coffees_cafesContext, bool>> filter = null,
-            Func<IQueryable<coffees_cafesContext>, IOrderedQueryable<coffees_cafesContext>> orderBy = null,
+        public CafeContext Get(
+            Expression<Func<CafeContext, bool>> filter = null,
+            Func<IQueryable<CafeContext>, IOrderedQueryable<CafeContext>> orderBy = null,
             string includeProperties = "")
         {
             throw new NotImplementedException();
         }
 
-        public void Create(coffees_cafesContext item)
+        public void Create(CafeContext item)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(coffees_cafesContext item)
+        public void Update(CafeContext item)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(coffees_cafesContext item)
+        public void Delete(CafeContext item)
         {
             throw new NotImplementedException();
         }

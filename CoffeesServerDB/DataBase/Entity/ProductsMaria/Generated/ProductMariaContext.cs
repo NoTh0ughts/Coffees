@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
 {
-    public partial class databaseContext : DbContext
+    public partial class ProductMariaContext : DbContext
     {
-        public databaseContext()
+        public ProductMariaContext()
         {
         }
 
-        public databaseContext(DbContextOptions<databaseContext> options)
+        public ProductMariaContext(DbContextOptions<ProductMariaContext> options)
             : base(options)
         {
         }

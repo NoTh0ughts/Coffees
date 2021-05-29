@@ -7,9 +7,9 @@ using CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated;
 
 namespace CoffeesServerDB.DataBase.Repositoryes
 {
-    public class ProductRepository : IRepository<databaseContext>
+    public class ProductRepository : IRepository<ProductMariaContext>
     {
-        public databaseContext Context;
+        public ProductMariaContext Context;
 
 
         public void Dispose()
@@ -17,32 +17,32 @@ namespace CoffeesServerDB.DataBase.Repositoryes
             throw new NotImplementedException();
         }
 
-        public IEnumerable<databaseContext> GetItemList()
+        public IEnumerable<ProductMariaContext> GetItemList()
         {
             throw new NotImplementedException();
         }
 
-        public databaseContext GetItemById()
+        public ProductMariaContext GetItemById()
         {
             throw new NotImplementedException();
         }
 
-        public databaseContext Get(Expression<Func<databaseContext, bool>> filter = null, Func<IQueryable<databaseContext>, IOrderedQueryable<databaseContext>> orderBy = null, string includeProperties = "")
+        public ProductMariaContext Get(Expression<Func<ProductMariaContext, bool>> filter = null, Func<IQueryable<ProductMariaContext>, IOrderedQueryable<ProductMariaContext>> orderBy = null, string includeProperties = "")
         {
             throw new NotImplementedException();
         }
 
-        public void Create(databaseContext item)
+        public void Create(ProductMariaContext item)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(databaseContext item)
+        public void Update(ProductMariaContext item)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(databaseContext item)
+        public void Delete(ProductMariaContext item)
         {
             throw new NotImplementedException();
         }

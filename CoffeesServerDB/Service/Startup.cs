@@ -50,24 +50,24 @@ namespace CoffeesServerDB.Service
             
             //Postgres
             services.AddEntityFrameworkNpgsql()
-                .AddDbContext<coffees_cafesContext>(options => options.UseNpgsql(ConfigLoader.PostgresUrl));
+                .AddDbContext<CafeContext>(options => options.UseNpgsql(ConfigLoader.PostgresUrl));
             services.AddScoped<CoffeesRepository>();
-            services.AddScoped<coffees_cafesContext>();
+            services.AddScoped<CafeContext>();
             
             //Mssql
             services.AddEntityFrameworkSqlServer()
-                .AddDbContext<coffeeContext>(options => options.UseSqlServer(ConfigLoader.MssqlUrl));
-            services.AddScoped<coffeeContext>();
+                .AddDbContext<ProductSqlServerContext>(options => options.UseSqlServer(ConfigLoader.MssqlUrl));
+            services.AddScoped<ProductSqlServerContext>();
             services.AddScoped<ProductRepository>();
             
             
             
             //Maria
             services.AddEntityFrameworkMySql()
-                .AddDbContext<databaseContext>(options => options.UseMySql(ConfigLoader.MariaURL,
+                .AddDbContext<ProductMariaContext>(options => options.UseMySql(ConfigLoader.MariaURL,
                     ServerVersion.AutoDetect(ConfigLoader.MariaURL)));
             
-            services.AddScoped<databaseContext>();
+            services.AddScoped<ProductMariaContext>();
         }
 
       
