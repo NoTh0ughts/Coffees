@@ -69,5 +69,6 @@ namespace CoffeesServerDB.DataBase.Controllers
         [HttpGet("getAllAddress")]
         public IEnumerable<string> getAllAddress() => _unitCafe.GetRepository<Cafe>().GettAll().Select(x => x.Address);
         
+        //comment
     }
 }
