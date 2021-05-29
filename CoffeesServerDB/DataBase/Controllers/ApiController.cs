@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using CoffeesServerDB.DataBase.Entity;
 using CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated;
 using CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated;
@@ -52,9 +53,21 @@ namespace CoffeesServerDB.DataBase.Controllers
         public string getOrderStatus(int orderId) => _service.GetOrderStatus(orderId);
 
         [HttpGet("get_citys")]
-        public IEnumerable<City> getCities() => _unitCafe.GetRepository<City>().GettAll();
+        public IEnumerable<City> getCities()
+        {
+            var result = _unitCafe.GetRepository<City>().GettAll();
+            foreach (var city in result)
+            {
+                city.Caves.ToList();
+            }
+            return result;
+        }
 
         [HttpGet("get_users")]
         public IEnumerable<User> getUsers() => _service.GetUsers();
+
+        [HttpGet("getAllAddress")]
+        public IEnumerable<string> getAllAddress() => _unitCafe.GetRepository<Cafe>().GettAll().Select(x => x.Address);
+        
     }
 }
