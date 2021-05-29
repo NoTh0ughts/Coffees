@@ -14,5 +14,7 @@ namespace CoffeesServerDB.DataBase.Entity.UserStuff
         public string Photo { get; set; }
         [BsonElement("card_id")]
         public int Card_id { get; set; }
+        [BsonElement("favorites")]
+        public int[] Favorites { get; set; }
     }
 }

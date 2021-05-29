@@ -54,13 +54,13 @@ namespace CoffeesServerDB.Service
 
         private static string ConfigureURLMariaDBFromEnviroment()
         {
-            var address = Environment.GetEnvironmentVariable("MYSQL_SERVER") + ":" 
-                             + Environment.GetEnvironmentVariable("MYSQL_PORT");
-            var userId = "sa";
+            var address = Environment.GetEnvironmentVariable("MYSQL_SERVER");
+            var port = Environment.GetEnvironmentVariable("MYSQL_PORT");
+            var userId = "root";
             var password = Environment.GetEnvironmentVariable("MYSQL_ROOT_PASSWORD");
             var databaseName = Environment.GetEnvironmentVariable("MYSQL_DATABASE");
 
-            var result = $@"Server={address};User ID={userId};Password={password};Database={databaseName}";
+            var result = $@"Server={address};Port={port};Database={databaseName};Uid={userId};Pwd={password};";
 
             return _mariaURL = result;
         }

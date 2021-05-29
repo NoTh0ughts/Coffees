@@ -75,17 +75,19 @@ namespace CoffeesServerDB.Service
             services.AddEntityFrameworkSqlServer()
                 .AddDbContext<ProductSqlServerContext>(options => options.UseSqlServer(ConfigLoader.MssqlUrl))
                 .AddUnitOfWork<ProductSqlServerContext>()
-                .AddCustomRepository<Menu, GenericRepository<Menu>>()
-                .AddCustomRepository<Product, GenericRepository<Product>>()
+                .AddCustomRepository<Menu,        GenericRepository<Menu>>()
+                .AddCustomRepository<Product,     GenericRepository<Product>>()
                 .AddCustomRepository<Subcategory, GenericRepository<Subcategory>>()
-                .AddCustomRepository<Category, GenericRepository<Category>>();
+                .AddCustomRepository<Category,    GenericRepository<Category>>();
 
 
             //Maria
+            Console.WriteLine(ConfigLoader.MariaURL);
             services.AddEntityFrameworkMySql()
                 .AddDbContext<ProductMariaContext>(options => options.UseMySql(ConfigLoader.MariaURL,
                     ServerVersion.AutoDetect(ConfigLoader.MariaURL)))
-                .AddCustomRepository<Component, GenericRepository<Component>>()
+                .AddUnitOfWork<ProductMariaContext>()
+                .AddCustomRepository<Component,  GenericRepository<Component>>()
                 .AddCustomRepository<Ingredient, GenericRepository<Ingredient>>();
         }
 

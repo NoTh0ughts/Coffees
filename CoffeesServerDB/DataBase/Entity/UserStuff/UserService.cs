@@ -16,7 +16,7 @@ namespace CoffeesServerDB.DataBase.Entity.UserStuff
         private readonly IMongoCollection<User> _users;
         private readonly IMongoCollection<Card> _cards;
         private readonly IMongoCollection<Status> _status;
-        
+
         public UserService(IMongoConfig config)
         {
             var client = new MongoClient(ConfigLoader.MongoURL);
@@ -27,8 +27,10 @@ namespace CoffeesServerDB.DataBase.Entity.UserStuff
             _cards = db.GetCollection<Card>("card");
             _status = db.GetCollection<Status>("status");
         }
+
+        public ICollection<User> GetUsers() => _users.AsQueryable().ToList();
         
-        public ICollection<Order> Get() => IAsyncCursorSourceExtensions.ToList((from o in _orders.AsQueryable() select o));
+        public ICollection<Order> GetOrders() => IAsyncCursorSourceExtensions.ToList((from o in _orders.AsQueryable() select o));
 
         public ICollection<Order> GetOrdersByUser(int userId) =>
             IAsyncCursorSourceExtensions.ToList((from o in _orders.AsQueryable() where o.User_id == userId select o));

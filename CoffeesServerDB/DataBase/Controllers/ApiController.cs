@@ -37,7 +37,7 @@ namespace CoffeesServerDB.DataBase.Controllers
 
 
         [HttpGet("get_orders")]
-        public IEnumerable<Order> get_orders() => _service.Get();
+        public IEnumerable<Order> get_orders() => _service.GetOrders();
 
         [HttpGet("get_orders_by_user")]
         public ICollection<Order> getOrdersByUser([FromQuery(Name = "userId")]int userId) => _service.GetOrdersByUser(userId);
@@ -53,5 +53,8 @@ namespace CoffeesServerDB.DataBase.Controllers
 
         [HttpGet("get_citys")]
         public IEnumerable<City> getCities() => _unitCafe.GetRepository<City>().GettAll();
+
+        [HttpGet("get_users")]
+        public IEnumerable<User> getUsers() => _service.GetUsers();
     }
 }
