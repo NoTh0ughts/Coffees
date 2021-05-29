@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using CoffeesServerDB.DataBase.Entity;
+using CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated;
 using CoffeesServerDB.DataBase.Entity.UserStuff;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -11,11 +13,15 @@ namespace CoffeesServerDB.DataBase.Controllers
     {
         private readonly ILogger<ApiController> _logger;
         private readonly UserService _service;
+        private readonly IUnitOfWork<CafeContext> _uow_cafe;
         
-        public ApiController(ILogger<ApiController> logger, UserService service)
+        
+        
+        public ApiController(ILogger<ApiController> logger, UserService service, IUnitOfWork<CafeContext> unit)
         {
             _logger = _logger;
             _service = service;
+            _uow_cafe = unit;
         }
 
 
@@ -33,7 +39,8 @@ namespace CoffeesServerDB.DataBase.Controllers
 
         [HttpGet("get_order_status")]
         public string getOrderStatus(int orderId) => _service.GetOrderStatus(orderId);
-        
-        
+
+        [HttpGet("get_citys")]
+        public IEnumerable<City> getCities() => _uow_cafe.GetRepository<City>().GettAll();
     }
 }

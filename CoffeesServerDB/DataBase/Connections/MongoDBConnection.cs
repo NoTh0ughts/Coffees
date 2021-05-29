@@ -1,8 +1,10 @@
-﻿using CoffeesServerDB.Service;
+﻿using System;
+using CoffeesServerDB.Service;
 using MongoDB.Driver;
 
 namespace CoffeesServerDB.DataBase.Connections
 {
+    [Obsolete("Not used any more", true)]
     class MongoDbConnection 
     {
         public static MongoDbConnection Instanse 

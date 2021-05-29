@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 
 namespace CoffeesServerDB.DataBase.Repositoryes
 {
-    public class GenericRepository<TEntity> where TEntity : class
+    public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         internal DbContext context;
         internal DbSet<TEntity> dbSet;
@@ -17,59 +15,33 @@ namespace CoffeesServerDB.DataBase.Repositoryes
             this.dbSet = context.Set<TEntity>();
         }
 
-        protected virtual IEnumerable<TEntity> Get(
-            Expression<Func<TEntity, bool>> filter = null,
-            Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-            string includeProperties = "")
+        public GenericRepository()
         {
-            IQueryable<TEntity> query = dbSet;
-
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
-
-            query = includeProperties.Split(new char[]
-                    {
-                        ','
-                    },
-                    StringSplitOptions.RemoveEmptyEntries)
-                .Aggregate(query,
-                    (current,
-                        includeProperty) => current.Include(includeProperty));
-
-            return orderBy != null ? orderBy(query).ToList() : query.ToList();
+            
         }
 
-        protected virtual TEntity GetByID(object id)
+
+        public void Save() => context.SaveChanges();
+        public void SaveAsync() => context.SaveChangesAsync();
+        public void Dispose() => context.SaveChanges();
+        public ICollection<TEntity> GettAll() => dbSet.ToList();
+        public TEntity GetById(int id) => dbSet.Find(id);
+        public void Remove(TEntity item)
         {
-            return dbSet.Find(id);
+            dbSet.Remove(item);
+            context.SaveChanges();
         }
 
-        protected virtual void Insert(TEntity entity)
+        public void Create(TEntity newItem)
         {
-            dbSet.Add(entity);
+            dbSet.Add(newItem);
+            context.SaveChanges();
         }
 
-        protected virtual void Delete(object id)
+        public void Update(TEntity replacedItem)
         {
-            TEntity entityToDelete = dbSet.Find(id);
-            Delete(entityToDelete);
-        }
-
-        protected virtual void Delete(TEntity entityToDelete)
-        {
-            if (context.Entry(entityToDelete).State == EntityState.Detached)
-            {
-                dbSet.Attach(entityToDelete);
-            }
-            dbSet.Remove(entityToDelete);
-        }
-
-        protected virtual void Update(TEntity entityToUpdate)
-        {
-            dbSet.Attach(entityToUpdate);
-            context.Entry(entityToUpdate).State = EntityState.Modified;
+            context.Entry(replacedItem).State = EntityState.Modified;
+            context.SaveChanges();
         }
     }
 }

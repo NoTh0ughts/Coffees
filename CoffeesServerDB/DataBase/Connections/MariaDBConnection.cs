@@ -4,6 +4,7 @@ using MySqlConnector;
 
 namespace CoffeesServerDB.DataBase.Connections
 {
+    [Obsolete("Not used any more", true)]
     public class MariaDBConnection
     {
         public static MariaDBConnection MariaDbConnection
