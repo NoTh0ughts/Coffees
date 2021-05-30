@@ -42,11 +42,17 @@ namespace CoffeesServerDB.Service
                     {
                         Title = "Coffees",
                         Version = "v1.00",
+                        Description = "1. HTTP GET: для запроса на получение ресурса по этому URI.\n" +
+                                      "2. HTTP DELETE: для запроса на удаление ресурса по этому URI. \n" +
+                                      "3. HTTP POST: для запроса загрузки и сохранения загружаемых данных в данные. " +
+                                      "Затем сервер сохраняет объект и предоставляет новый URI для этого ресурса.\n" +
+                                      "4. HTTP PUT: то же самое, что и POST, но с условием, что он проверяет, " +
+                                      "сохранены ли уже эти ресурсы. Если этот ресурс доступен, он просто обновляется.\n",
                         Contact = new OpenApiContact()
                         {
                             Name = "Repository",
                             Email = "",
-                            Url = new Uri("https://github.com/TakeMe100Points/Coffees")
+                            Url = new Uri("https://github.com/TakeMe100Points/Coffees"),
                         }
                     });
             });

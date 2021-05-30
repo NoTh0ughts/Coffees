@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using System;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace CoffeesServerDB.DataBase.Entity.UserStuff
 {
@@ -18,5 +19,7 @@ namespace CoffeesServerDB.DataBase.Entity.UserStuff
         public int[] Favorites { get; set; }
         [BsonElement("basket")]
         public ProductItem[] Basket { get; set; }
+        [BsonElement("registration_date")]
+        public DateTime RegistrationDate { get; set; }
     }
 }

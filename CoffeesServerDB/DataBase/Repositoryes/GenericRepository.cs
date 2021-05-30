@@ -24,7 +24,7 @@ namespace CoffeesServerDB.DataBase.Repositoryes
         public void Save() => context.SaveChanges();
         public void SaveAsync() => context.SaveChangesAsync();
         public void Dispose() => context.SaveChanges();
-        public ICollection<TEntity> GettAll() => dbSet.ToList();
+        public ICollection<TEntity> GetAll() => dbSet.ToList();
         public TEntity GetById(int id) => dbSet.Find(id);
         public void Remove(TEntity item)
         {
@@ -32,10 +32,11 @@ namespace CoffeesServerDB.DataBase.Repositoryes
             context.SaveChanges();
         }
 
-        public void Create(TEntity newItem)
+        public TEntity Create(TEntity newItem)
         {
-            dbSet.Add(newItem);
+            var newEntity = dbSet.Add(newItem).Entity;
             context.SaveChanges();
+            return newEntity;
         }
 
         public void Update(TEntity replacedItem)

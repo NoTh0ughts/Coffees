@@ -10,8 +10,8 @@ namespace CoffeesServerDB.DataBase.DTO
         public string Fullname { get; set; }
         public int Salary { get; set; }
         public string Post { get; set; }
-        public string Address { get; set; }
-        public int cafe_id { get; set; }
+        public int Post_id { get; set; }
+        public int Cafe_id { get; set; }
     }
     
 
@@ -20,11 +20,22 @@ namespace CoffeesServerDB.DataBase.DTO
         public static readonly Expression<Func<Worker, WorkerDTO>> AsWorkerDTO = x => new WorkerDTO
         {
             Id = x.Id,
-            Address = x.Cafe.Address,
             Fullname = x.Fullname,
-            cafe_id = x.Cafe.Id,
+            Cafe_id = x.Cafe.Id,
             Post = x.Post.Name,
+            Post_id = x.PostId,
             Salary = x.Salary
         };
+
+        public static WorkerDTO ToWorkerDTO(this Worker x) =>
+            new WorkerDTO
+            {
+                Id = x.Id,
+                Fullname = x.Fullname,
+                Cafe_id = x.Cafe.Id,
+                Post = x.Post.Name,
+                Post_id = x.PostId,
+                Salary = x.Salary
+            };
     } 
 }
