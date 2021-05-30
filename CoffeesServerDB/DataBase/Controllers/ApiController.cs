@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CoffeesServerDB.DataBase.DTO;
 using CoffeesServerDB.DataBase.Entity;
 using CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated;
 using CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated;
 using CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated;
 using CoffeesServerDB.DataBase.Entity.UserStuff;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace CoffeesServerDB.DataBase.Controllers
@@ -58,7 +60,7 @@ namespace CoffeesServerDB.DataBase.Controllers
             var result = _unitCafe.GetRepository<City>().GettAll();
             foreach (var city in result)
             {
-                city.Caves.ToList();
+                city.Cafes.ToList();
             }
             return result;
         }
@@ -68,7 +70,11 @@ namespace CoffeesServerDB.DataBase.Controllers
 
         [HttpGet("getAllAddress")]
         public IEnumerable<string> getAllAddress() => _unitCafe.GetRepository<Cafe>().GettAll().Select(x => x.Address);
-        
-        //comment
+
+        [HttpGet("get_dto_cafe")]
+        public IEnumerable<CafeDTO> getDTOCafe()
+        {
+            return _unitCafe.DbContext.Cafes.Include(x => x.City).Select(DTOHelper.AsCafeDTO);
+        }
     }
 }

@@ -8,12 +8,12 @@ namespace CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated
     {
         public City()
         {
-            Caves = new HashSet<Cafe>();
+            Cafes = new HashSet<Cafe>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Cafe> Caves { get; set; }
+        public virtual ICollection<Cafe> Cafes { get; set; }
     }
 }

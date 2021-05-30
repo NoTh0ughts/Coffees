@@ -17,7 +17,7 @@ namespace CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated
         }
 
         public virtual DbSet<Brand> Brands { get; set; }
-        public virtual DbSet<Cafe> Caves { get; set; }
+        public virtual DbSet<Cafe> Cafes { get; set; }
         public virtual DbSet<CafeEquipment> CafeEquipments { get; set; }
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<EqType> EqTypes { get; set; }
@@ -64,7 +64,7 @@ namespace CoffeesServerDB.DataBase.Entity.CoffeHouseStuff.Generated
                 entity.Property(e => e.CityId).HasColumnName("city_id");
 
                 entity.HasOne(d => d.City)
-                    .WithMany(p => p.Caves)
+                    .WithMany(p => p.Cafes)
                     .HasForeignKey(d => d.CityId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("cafe_city_id_fkey");
