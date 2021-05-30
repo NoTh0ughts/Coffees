@@ -95,3 +95,10 @@ Repository of different database managment systems
      - БД с пользователями
      
        ![image](https://user-images.githubusercontent.com/66141673/113521696-d32bc100-95a3-11eb-8e69-e2049ef3c9c1.png)
+
+## Используемые библеотеки
+   - EntityFrameworkCore 5.0.6
+   - MongoDB.EntityFramework (provider)
+   - Npgsql.EntityFrameworkCore (provider)
+   - Pomelo.EntityFrameworkCore.MySql (provider)
+   - Swashbuckle.AspNetCore 6.1.4 (API documentation)
