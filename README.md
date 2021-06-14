@@ -96,6 +96,10 @@ Repository of different database managment systems
      
        ![image](https://user-images.githubusercontent.com/66141673/113521696-d32bc100-95a3-11eb-8e69-e2049ef3c9c1.png)
 
+## Диаграмма классов мобильного приложения
+
+   ![Coffees (1)](https://user-images.githubusercontent.com/66141673/121871016-4c663380-cd0c-11eb-93f4-ecad0fb42587.png)
+
 ## Используемые библеотеки
    - EntityFrameworkCore 5.0.6
    - MongoDB.EntityFramework (provider)
