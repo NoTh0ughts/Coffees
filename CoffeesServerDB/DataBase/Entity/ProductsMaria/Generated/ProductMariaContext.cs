@@ -17,14 +17,14 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
         {
         }
 
-        public virtual DbSet<ProductsSqlServer.Generated.Category> Categories { get; set; }
-        public virtual DbSet<ProductsSqlServer.Generated.Component> Components { get; set; }
-        public virtual DbSet<ProductsSqlServer.Generated.Ingredient> Ingredients { get; set; }
-        public virtual DbSet<ProductsSqlServer.Generated.Menu> Menus { get; set; }
-        public virtual DbSet<ProductsSqlServer.Generated.Product> Products { get; set; }
-        public virtual DbSet<ProductsSqlServer.Generated.ProductComponent> ProductComponents { get; set; }
-        public virtual DbSet<ProductsSqlServer.Generated.ProductIngredient> ProductIngredients { get; set; }
-        public virtual DbSet<ProductsSqlServer.Generated.Subcategory> Subcategories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Component> Components { get; set; }
+        public virtual DbSet<Ingredient> Ingredients { get; set; }
+        public virtual DbSet<Menu> Menus { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductComponent> ProductComponents { get; set; }
+        public virtual DbSet<ProductIngredient> ProductIngredients { get; set; }
+        public virtual DbSet<Subcategory> Subcategories { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -40,7 +40,7 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
             modelBuilder.HasCharSet("utf8mb4")
                 .UseCollation("utf8mb4_general_ci");
 
-            modelBuilder.Entity<ProductsSqlServer.Generated.Category>(entity =>
+            modelBuilder.Entity<ProductsMaria.Generated.Category>(entity =>
             {
                 entity.ToTable("category");
 
@@ -66,7 +66,7 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
                     .HasConstraintName("fk_menu_id1");
             });
 
-            modelBuilder.Entity<ProductsSqlServer.Generated.Component>(entity =>
+            modelBuilder.Entity<Component>(entity =>
             {
                 entity.ToTable("component");
 
@@ -80,7 +80,7 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
                     .HasColumnName("name");
             });
 
-            modelBuilder.Entity<ProductsSqlServer.Generated.Ingredient>(entity =>
+            modelBuilder.Entity<Ingredient>(entity =>
             {
                 entity.ToTable("ingredient");
 
@@ -94,7 +94,7 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
                     .HasColumnName("name");
             });
 
-            modelBuilder.Entity<ProductsSqlServer.Generated.Menu>(entity =>
+            modelBuilder.Entity<Menu>(entity =>
             {
                 entity.ToTable("menu");
 
@@ -108,7 +108,7 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
                     .HasColumnName("name");
             });
 
-            modelBuilder.Entity<ProductsSqlServer.Generated.Product>(entity =>
+            modelBuilder.Entity<Product>(entity =>
             {
                 entity.ToTable("product");
 
@@ -145,7 +145,7 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
                     .HasForeignKey(d => d.SubcategoryId), "fk_subcategory_id_1");
             });
 
-            modelBuilder.Entity<ProductsSqlServer.Generated.ProductComponent>(entity =>
+            modelBuilder.Entity<ProductComponent>(entity =>
             {
                 entity.HasKey(e => new { e.ProductId, e.ComponentId })
                     .HasName("PRIMARY")
@@ -176,7 +176,7 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
                     .OnDelete(DeleteBehavior.ClientSetNull), "fk_product_id_2");
             });
 
-            modelBuilder.Entity<ProductsSqlServer.Generated.ProductIngredient>(entity =>
+            modelBuilder.Entity<ProductIngredient>(entity =>
             {
                 entity.HasKey(e => new { e.IngredientId, e.ProductId })
                     .HasName("PRIMARY")
@@ -205,7 +205,7 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
                     .OnDelete(DeleteBehavior.ClientSetNull), "fk_product_id_1");
             });
 
-            modelBuilder.Entity<ProductsSqlServer.Generated.Subcategory>(entity =>
+            modelBuilder.Entity<Subcategory>(entity =>
             {
                 entity.ToTable("subcategory");
 

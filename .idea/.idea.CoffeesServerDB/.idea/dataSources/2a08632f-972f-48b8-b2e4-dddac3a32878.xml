@@ -14,85 +14,95 @@
     <table id="7" parent="4" name="order"/>
     <table id="8" parent="4" name="status"/>
     <table id="9" parent="4" name="user"/>
-    <table id="10" parent="4" name="user_product"/>
-    <column id="11" parent="6" name="_id">
+    <column id="10" parent="6" name="_id">
       <DataType>ObjectId(0)|12s</DataType>
     </column>
-    <column id="12" parent="6" name="discount">
+    <column id="11" parent="6" name="discount">
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="13" parent="6" name="id">
+    <column id="12" parent="6" name="id">
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="14" parent="7" name="_id">
+    <column id="13" parent="7" name="_id">
       <DataType>ObjectId(0)|12s</DataType>
     </column>
-    <column id="15" parent="7" name="cafe_id">
+    <column id="14" parent="7" name="cafe_id">
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="16" parent="7" name="date_order">
+    <column id="15" parent="7" name="date_order">
       <DataType>String(0)|12s</DataType>
     </column>
-    <column id="17" parent="7" name="id">
+    <column id="16" parent="7" name="id">
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="18" parent="7" name="status_id">
+    <column id="17" parent="7" name="status_id">
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="19" parent="7" name="user_id">
-      <DataType>Integer|4s</DataType>
-    </column>
-    <column id="20" parent="7" name="stuff">
+    <column id="18" parent="7" name="stuff">
       <Position>1</Position>
       <DataType>list(0)|4999545s</DataType>
     </column>
-    <column id="21" parent="7" name="stuff.count">
+    <column id="19" parent="7" name="stuff.count">
       <Position>2</Position>
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="22" parent="7" name="stuff.product_id">
+    <column id="20" parent="7" name="stuff.product_id">
       <Position>3</Position>
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="23" parent="8" name="_id">
+    <column id="21" parent="7" name="user_id">
+      <Position>4</Position>
+      <DataType>Integer|4s</DataType>
+    </column>
+    <column id="22" parent="8" name="_id">
       <DataType>ObjectId(0)|12s</DataType>
     </column>
-    <column id="24" parent="8" name="id">
+    <column id="23" parent="8" name="id">
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="25" parent="8" name="status">
+    <column id="24" parent="8" name="status">
       <DataType>String(0)|12s</DataType>
     </column>
-    <column id="26" parent="9" name="_id">
+    <column id="25" parent="9" name="_id">
       <DataType>ObjectId(0)|12s</DataType>
     </column>
-    <column id="27" parent="9" name="card_id">
+    <column id="26" parent="9" name="card_id">
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="28" parent="9" name="email">
+    <column id="27" parent="9" name="email">
       <DataType>String(0)|12s</DataType>
     </column>
-    <column id="29" parent="9" name="id">
+    <column id="28" parent="9" name="id">
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="30" parent="9" name="password">
+    <column id="29" parent="9" name="password">
       <DataType>String(0)|12s</DataType>
     </column>
-    <column id="31" parent="9" name="username">
+    <column id="30" parent="9" name="username">
       <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="31" parent="9" name="basket">
+      <DataType>list(0)|4999545s</DataType>
     </column>
     <column id="32" parent="9" name="photo">
       <Position>1</Position>
       <DataType>String(0)|12s</DataType>
     </column>
-    <column id="33" parent="10" name="_id">
-      <DataType>ObjectId(0)|12s</DataType>
-    </column>
-    <column id="34" parent="10" name="product_id">
+    <column id="33" parent="9" name="basket.count">
+      <Position>1</Position>
       <DataType>Integer|4s</DataType>
     </column>
-    <column id="35" parent="10" name="user_id">
+    <column id="34" parent="9" name="basket.product_id">
+      <Position>2</Position>
       <DataType>Integer|4s</DataType>
+    </column>
+    <column id="35" parent="9" name="favorites">
+      <Position>2</Position>
+      <DataType>list(0)|4999545s</DataType>
+    </column>
+    <column id="36" parent="9" name="registration_date">
+      <Position>2</Position>
+      <DataType>String(0)|12s</DataType>
     </column>
   </database-model>
 </dataSource>

@@ -8,12 +8,12 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
     {
         public Component()
         {
-            ProductComponents = new HashSet<ProductsSqlServer.Generated.ProductComponent>();
+            ProductComponents = new HashSet<ProductComponent>();
         }
 
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<ProductsSqlServer.Generated.ProductComponent> ProductComponents { get; set; }
+        public virtual ICollection<ProductComponent> ProductComponents { get; set; }
     }
 }

@@ -30,11 +30,8 @@ namespace CoffeesServerDB.Service
             foreach (var line in lines)
             {
                 var parts = line.Split('=', StringSplitOptions.RemoveEmptyEntries);
-                
-                if (parts.Length != 2)
-                    continue;
 
-                Environment.SetEnvironmentVariable(parts[0], parts[1]);
+                if (parts.Length == 2) Environment.SetEnvironmentVariable(parts[0], parts[1]);
             }
 
             new ConfigurationBuilder().AddEnvironmentVariables().Build();
@@ -81,12 +78,12 @@ namespace CoffeesServerDB.Service
         {
             var server = Environment.GetEnvironmentVariable("MSSQL_SERVER");
             var port = Environment.GetEnvironmentVariable("MSSQL_PORT");
-            var password = Environment.GetEnvironmentVariable("MSSQL_ROOT_PASSWORD");
-            var dbName = Environment.GetEnvironmentVariable("MSSQL_DATABASE");
+            var password = Environment.GetEnvironmentVariable("SA_PASSWORD");
+            var dbName = Environment.GetEnvironmentVariable("MSSQL_DB");
             
-            var result = $@"Server={server}; Database={dbName}; User=fsdfds";
-            
-            
+            var result = $@"Server={server};Database={dbName};User Id=sa;Password={password};";
+
+            Console.WriteLine(result);
             return _mssqlURL = result;
         }
     }

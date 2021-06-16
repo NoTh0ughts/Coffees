@@ -8,12 +8,20 @@ namespace CoffeesServerDB.DataBase.DTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Calories { get; set; }
+        public int? Calories { get; set; }
         public int Cost { get; set; }
         public string Picture { get; set; }
         public string Subcategory { get; set; }
         public string Category { get; set; }
         public string Menu { get; set; }
+        public string[] Ingredients { get; set; }
+        public ComponentItem[] Components { get; set; }
+    }
+
+    public class ComponentItem
+    {
+        public string Name { get; set; }
+        public float Dose { get; set; }
     }
     
     public static partial class DTOHelper

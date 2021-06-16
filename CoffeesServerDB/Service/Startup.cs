@@ -13,12 +13,22 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using Category = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Category;
-using Component = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.Component;
-using Ingredient = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.Ingredient;
-using Menu = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Menu;
-using Product = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Product;
-using Subcategory = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Subcategory;
+using SCategory = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Category;
+using SComponent = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Component;
+using SIngredient = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Ingredient;
+using SMenu = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Menu;
+using SProduct = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Product;
+using SProductComponent = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.ProductComponent;
+using SProductIngredient = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.ProductIngredient;
+using SSubcategory = CoffeesServerDB.DataBase.Entity.ProductsSqlServer.Generated.Subcategory;
+using MCategory = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.Category;
+using MComponent = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.Component;
+using MIngredient = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.Ingredient;
+using MMenu = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.Menu;
+using MProduct = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.Product;
+using MProductComponent = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.ProductComponent;
+using MProductIngredient = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.ProductIngredient;
+using MSubcategory = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.Subcategory;
 
 
 namespace CoffeesServerDB.Service
@@ -56,7 +66,8 @@ namespace CoffeesServerDB.Service
                         }
                     });
             });
-
+            
+            
             //Mongo
             services.Configure<MongoConfig>(Configuration.GetSection(nameof(MongoConfig)));
             services.AddSingleton<IMongoConfig>(isp => isp.GetRequiredService<IOptions<MongoConfig>>().Value);
@@ -81,10 +92,14 @@ namespace CoffeesServerDB.Service
             services.AddEntityFrameworkSqlServer()
                 .AddDbContext<ProductSqlServerContext>(options => options.UseSqlServer(ConfigLoader.MssqlUrl))
                 .AddUnitOfWork<ProductSqlServerContext>()
-                .AddCustomRepository<Menu,        GenericRepository<Menu>>()
-                .AddCustomRepository<Product,     GenericRepository<Product>>()
-                .AddCustomRepository<Subcategory, GenericRepository<Subcategory>>()
-                .AddCustomRepository<Category,    GenericRepository<Category>>();
+                .AddCustomRepository<SProductComponent,  GenericRepository<SProductComponent>>()
+                .AddCustomRepository<SProductIngredient, GenericRepository<SProductIngredient>>()
+                .AddCustomRepository<SComponent,         GenericRepository<SComponent>>()
+                .AddCustomRepository<SIngredient,        GenericRepository<SIngredient>>()
+                .AddCustomRepository<SMenu,              GenericRepository<SMenu>>()
+                .AddCustomRepository<SProduct,           GenericRepository<SProduct>>()
+                .AddCustomRepository<SSubcategory,       GenericRepository<SSubcategory>>()
+                .AddCustomRepository<SCategory,          GenericRepository<SCategory>>();
 
 
             //Maria
@@ -93,8 +108,14 @@ namespace CoffeesServerDB.Service
                 .AddDbContext<ProductMariaContext>(options => options.UseMySql(ConfigLoader.MariaURL,
                     ServerVersion.AutoDetect(ConfigLoader.MariaURL)))
                 .AddUnitOfWork<ProductMariaContext>()
-                .AddCustomRepository<Component,  GenericRepository<Component>>()
-                .AddCustomRepository<Ingredient, GenericRepository<Ingredient>>();
+                .AddCustomRepository<MProductComponent,  GenericRepository<MProductComponent>>()
+                .AddCustomRepository<MProductIngredient, GenericRepository<MProductIngredient>>()
+                .AddCustomRepository<MComponent,         GenericRepository<MComponent>>()
+                .AddCustomRepository<MIngredient,        GenericRepository<MIngredient>>()
+                .AddCustomRepository<MMenu,              GenericRepository<MMenu>>()
+                .AddCustomRepository<MProduct,           GenericRepository<MProduct>>()
+                .AddCustomRepository<MSubcategory,       GenericRepository<MSubcategory>>()
+                .AddCustomRepository<MCategory,          GenericRepository<MCategory>>();
         }
 
       
@@ -107,9 +128,6 @@ namespace CoffeesServerDB.Service
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Srv v1"));
             }
-
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthorization();

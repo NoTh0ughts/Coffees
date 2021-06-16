@@ -1046,6 +1046,7 @@ UC/10
     </sequence>
     <table id="42" parent="21" name="brand">
       <ObjectId>16569</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>postgres</Owner>
       <StateNumber>592</StateNumber>
     </table>

@@ -32,8 +32,7 @@ namespace CoffeesServerDB.DataBase.Connections
 
 
             _mongoClient = new MongoClient(atlasStr);
-
-            DB = _mongoClient.GetDatabase(Constants.MongoDbDatabaseName);
+            //DB = _mongoClient.GetDatabase(Constants.MongoDbDatabaseName);
         }
     }
 }

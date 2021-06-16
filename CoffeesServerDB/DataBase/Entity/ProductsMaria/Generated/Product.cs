@@ -8,8 +8,8 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
     {
         public Product()
         {
-            ProductComponents = new HashSet<ProductsSqlServer.Generated.ProductComponent>();
-            ProductIngredients = new HashSet<ProductsSqlServer.Generated.ProductIngredient>();
+            ProductComponents = new HashSet<ProductComponent>();
+            ProductIngredients = new HashSet<ProductIngredient>();
         }
 
         public int Id { get; set; }
@@ -19,8 +19,8 @@ namespace CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated
         public string Picture { get; set; }
         public int? SubcategoryId { get; set; }
 
-        public virtual ProductsSqlServer.Generated.Subcategory Subcategory { get; set; }
-        public virtual ICollection<ProductsSqlServer.Generated.ProductComponent> ProductComponents { get; set; }
-        public virtual ICollection<ProductsSqlServer.Generated.ProductIngredient> ProductIngredients { get; set; }
+        public virtual Subcategory Subcategory { get; set; }
+        public virtual ICollection<ProductComponent> ProductComponents { get; set; }
+        public virtual ICollection<ProductIngredient> ProductIngredients { get; set; }
     }
 }

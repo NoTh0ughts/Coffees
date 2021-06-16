@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CoffeesServerDB.Service;
 using MongoDB.Driver;
@@ -27,9 +28,11 @@ namespace CoffeesServerDB.DataBase.Entity.UserStuff
             _status = db.GetCollection<Status>("status");
         }
 
-        public ICollection<User> GetUsers() => _users.AsQueryable().ToList();
-        
-        public ICollection<Order> GetOrders() => IAsyncCursorSourceExtensions.ToList((from o in _orders.AsQueryable() select o));
+        public ICollection<User> GetUsers(int userId = -1) => _users.AsQueryable()
+            .Where(x => userId == -1 || x.Id == userId).ToList();
+
+        public ICollection<Order> GetOrders(int orderId = -1) =>
+            _orders.AsQueryable().Where(x => orderId == -1 || x.Id == orderId).ToList();
 
         public ICollection<Order> GetOrdersByUser(int userId) =>
             IAsyncCursorSourceExtensions.ToList((from o in _orders.AsQueryable() where o.User_id == userId select o));
@@ -49,7 +52,16 @@ namespace CoffeesServerDB.DataBase.Entity.UserStuff
             join o in _orders.AsQueryable() on s.Id equals o.Status_id
             where o.Id == order_id
             select new {s.Title})).ToString();
-        
+
+        public Status AddStatus(Status status)
+        {
+            status.Id = FindId(status);
+            _status.InsertOne(status);
+            return status;
+        }
+
+        public IEnumerable<Status> GetStatuses() => _status.AsQueryable().ToList();
+
         #region CRUD User
         public void RemoveUser(int userId)
         {
@@ -63,6 +75,7 @@ namespace CoffeesServerDB.DataBase.Entity.UserStuff
 
         public User AddUser(User newUser)
         {
+            newUser.Id = FindId(newUser);
             _users.InsertOne(newUser);
             return newUser;
         }
@@ -75,17 +88,38 @@ namespace CoffeesServerDB.DataBase.Entity.UserStuff
             _orders.DeleteOne(o => o.Id == orderId);
         }
 
-        public void UpdateOrder(int orderId, Order order)
+        public ReplaceOneResult UpdateOrder(int orderId, Order order)
         {
-            _orders.ReplaceOne(o => o.Id == orderId, order);
+            return _orders.ReplaceOne(o => o.Id == orderId, order);
         }
 
         public Order AddOrder(Order newOrder)
         {
+            newOrder.Id = FindId(newOrder);
             _orders.InsertOne(newOrder);
             return newOrder;
         }
 
+        public bool HaveStatus(string name)
+        {
+            return _status.AsQueryable().Select(x => x.Title).Contains(name);
+        }
+
         #endregion
+
+        public int FindId(Order order)
+        {
+            return _orders.AsQueryable().Max(x => x.Id) + 1;
+        }
+
+        public int FindId(User user)
+        {
+            return _users.AsQueryable().Max(x => x.Id) + 1;
+        }
+
+        public int FindId(Status status)
+        {
+            return _status.AsQueryable().Max(x => x.Id) + 1;
+        }
     }
 }
