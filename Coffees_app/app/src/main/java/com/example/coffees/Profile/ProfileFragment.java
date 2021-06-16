@@ -105,23 +105,31 @@ public class ProfileFragment extends Fragment {
         super.onResume();
         profileFragmentProgressBar.setVisibility(View.VISIBLE);
         isLoggedIn();
+        if (ordersContentLayout != null)
+            Log.d("COUNT OF CHILD", String.valueOf(ordersContentLayout.getChildCount()));
     }
 
     private void isLoggedIn(){
         if (UserInfo.id != null){   //Если пользователь авторизован
-            thread_ProfileFragment();
+            //Если страница ещё не была ни разу инициализирована или пользователять разлогинился
+            if (ordersContentLayout == null || ordersContentLayout.getChildCount() == 0){
+                thread_ProfileFragment();
 
-            MainActivity activity = (MainActivity) getActivity();
-            if (activity != null)
-                if (activity.getToolbar() != null)
-                    getActivity().invalidateOptionsMenu();
+                MainActivity activity = (MainActivity) getActivity();
+                if (activity != null)
+                    if (activity.getToolbar() != null)
+                        getActivity().invalidateOptionsMenu();
 
-            //На страницу зашли повторно, после того как неавторизованный пользователь
-            //авторизировался
-            ConstraintLayout profileFragmentLayout = fragmentView.findViewById(
-                    R.id.profileFragmentLayout);
-            if (notAuthorizedPageId != null)
-                profileFragmentLayout.removeView(fragmentView.findViewById(notAuthorizedPageId));
+                //На страницу зашли повторно, после того как неавторизованный пользователь
+                //авторизировался
+                ConstraintLayout profileFragmentLayout = fragmentView.findViewById(
+                        R.id.profileFragmentLayout);
+                if (notAuthorizedPageId != null)
+                    profileFragmentLayout.removeView(fragmentView.findViewById(notAuthorizedPageId));
+            }
+            else
+                profileFragmentProgressBar.setVisibility(View.GONE);
+
         }
         else {
             profile_scrollView.setVisibility(View.GONE);

@@ -119,13 +119,13 @@ public class BasketActivity extends AppCompatActivity {
 
         basketCity_textInputLayout = findViewById(R.id.basketCity_textInputLayout);
         basketCity_autoCompleteTextView = findViewById(R.id.basketCity_autoCompleteTextView);
-        basketCity_autoCompleteTextView.setOnClickListener(v ->
-                basketCity_textInputLayout.setErrorEnabled(false));
+//        basketCity_autoCompleteTextView.setOnClickListener(v ->
+//                basketCity_textInputLayout.setErrorEnabled(false));
 
         basketCafe_textInputLayout = findViewById(R.id.basketCafe_textInputLayout);
         basketCafe_autoCompleteTextView = findViewById(R.id.basketCafe_autoCompleteTextView);
-        basketCafe_autoCompleteTextView.setOnClickListener(v ->
-                basketCafe_textInputLayout.setErrorEnabled(false));
+//        basketCafe_autoCompleteTextView.setOnClickListener(v ->
+//                basketCafe_textInputLayout.setErrorEnabled(false));
 
         thread_getCities();
 
@@ -307,6 +307,9 @@ public class BasketActivity extends AppCompatActivity {
             BasketCity city = (BasketCity) adapterCity.getItemAtPosition(positionCity);
             if (city != null){
                 cityPicked = true;
+                if (basketCity_textInputLayout.isErrorEnabled())
+                    basketCity_textInputLayout.setErrorEnabled(false);
+                basketCity_textInputLayout.clearFocus();
                 /*
                 Отправить запрос на получение всех кафе по указанному id города
                  */
@@ -372,6 +375,9 @@ public class BasketActivity extends AppCompatActivity {
             BasketCafe cafe = (BasketCafe) adapterCafe.getItemAtPosition(positionCafe);
             if (cafe != null){
                 cafePicked = true;
+                if (basketCafe_textInputLayout.isErrorEnabled())
+                    basketCafe_textInputLayout.setErrorEnabled(false);
+                basketCafe_textInputLayout.clearFocus();
                 BasketSender.cafeId = cafe.cafeId;
             }
         });
