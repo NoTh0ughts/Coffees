@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -18,6 +19,7 @@ import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.TypedValue;
@@ -43,10 +45,14 @@ import com.example.coffees.MainActivity;
 import com.example.coffees.ProfileClasses.ProfileFragmentModel;
 import com.example.coffees.ProfileClasses.ProfileFragmentOrderInfo;
 import com.example.coffees.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.text.MessageFormat;
 import java.text.ParseException;
@@ -79,6 +85,10 @@ public class ProfileFragment extends Fragment {
     private ProgressBar profileFragmentProgressBar;
 
     boolean isConnected = false;
+    boolean pageFilled = false;
+
+    ArrayList<ProfileFragmentOrderInfo> profileOrders = null;
+    String json = null;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -96,42 +106,52 @@ public class ProfileFragment extends Fragment {
         profileFragmentProgressBar = fragmentView.findViewById(R.id.profileFragmentProgressBar);
         profileFragmentProgressBar.setVisibility(View.VISIBLE);
 
-
         return fragmentView;
     }
+
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//
+//        if (profileOrders != null){
+//            Gson gson = new Gson();
+//            json = gson.toJson(profileOrders);
+//            //ordersContentLayout.removeAllViews();
+//        }
+//    }
 
     @Override
     public void onResume() {
         super.onResume();
-        profileFragmentProgressBar.setVisibility(View.VISIBLE);
-        isLoggedIn();
-        if (ordersContentLayout != null)
-            Log.d("COUNT OF CHILD", String.valueOf(ordersContentLayout.getChildCount()));
+//        if (json != null && !json.isEmpty()){
+//            Type profileOrdersType = new TypeToken<ArrayList<ProfileFragmentOrderInfo>>() {}.getType();
+//            Gson gson = new Gson();
+//            profileOrders = gson.fromJson(json, profileOrdersType);
+//        }
+
+        if (!pageFilled){
+            profileFragmentProgressBar.setVisibility(View.VISIBLE);
+            isLoggedIn();
+        }
     }
 
     private void isLoggedIn(){
+        //На страницу зашли повторно, после того как неавторизованный пользователь
+        //авторизировался
+        ConstraintLayout profileFragmentLayout = fragmentView.findViewById(
+                R.id.profileFragmentLayout);
+        if (notAuthorizedPageId != null)
+            profileFragmentLayout.removeView(fragmentView.findViewById(notAuthorizedPageId));
+
+        MainActivity activity = (MainActivity) getActivity();
+        if (activity != null)
+            if (activity.getToolbar() != null)
+                getActivity().invalidateOptionsMenu();
+
         if (UserInfo.id != null){   //Если пользователь авторизован
-            //Если страница ещё не была ни разу инициализирована или пользователять разлогинился
-            if (ordersContentLayout == null || ordersContentLayout.getChildCount() == 0){
-                thread_ProfileFragment();
-
-                MainActivity activity = (MainActivity) getActivity();
-                if (activity != null)
-                    if (activity.getToolbar() != null)
-                        getActivity().invalidateOptionsMenu();
-
-                //На страницу зашли повторно, после того как неавторизованный пользователь
-                //авторизировался
-                ConstraintLayout profileFragmentLayout = fragmentView.findViewById(
-                        R.id.profileFragmentLayout);
-                if (notAuthorizedPageId != null)
-                    profileFragmentLayout.removeView(fragmentView.findViewById(notAuthorizedPageId));
-            }
-            else
-                profileFragmentProgressBar.setVisibility(View.GONE);
-
+            thread_ProfileFragment();
         }
-        else {
+        else { //Пользователь не авторизован
             profile_scrollView.setVisibility(View.GONE);
             profileFragmentProgressBar.setVisibility(View.GONE);
             notAuthorizedPageId = Toodles.notAuthorizedPageContent(getActivity(), fragmentView,
@@ -150,7 +170,7 @@ public class ProfileFragment extends Fragment {
     private void thread_ProfileFragment(){
         new Thread(new Runnable() {
             HttpURLConnection connection = null;
-            ArrayList<ProfileFragmentOrderInfo> profileOrders = null;
+//            ArrayList<ProfileFragmentOrderInfo> profileOrders = null;
             ControllerAPI controllerAPI = new ControllerAPI();
             String url = MessageFormat.format("{0}?{1}={2}",
                     "http://web-schedule.zapto.org:5000/Api/User/GetCompletedUserOrders",
@@ -319,7 +339,7 @@ public class ProfileFragment extends Fragment {
                         orderSubproductCardView_size, orderSubproductCardView_size);
                 orderSubproductCardView.setLayoutParams(orderSubproductCardViewParams);
                 orderSubproductCardView.setRadius((float) orderSubproductCardView_size/2);
-                //Назначи layout_constraint для компонента
+                //Назначим layout_constraint для компонента
                 orderImagesLayout.addView(orderSubproductCardView);
                 ConstraintSet orderSubproductCardViewConstraint = new ConstraintSet();
                 orderSubproductCardViewConstraint.clone(orderImagesLayout);
@@ -404,9 +424,12 @@ public class ProfileFragment extends Fragment {
             orderLayout.addView(orderInfoLayout);
             ordersContentLayout.addView(orderLayout);
         }
+
+        pageFilled = true;
     }
 
     private void setTransition_UserOrdersFragment(Integer orderId, String orderDate){
+        pageFilled = false;
         Bundle bundle = new Bundle();
         bundle.putInt("id", orderId);
         bundle.putString("title", orderDate);
@@ -430,6 +453,7 @@ public class ProfileFragment extends Fragment {
                 if (ordersContentLayout != null && ordersContentLayout.getChildCount() > 2)
                     ordersContentLayout.removeAllViews();
 
+                pageFilled = false;
                 profile_scrollView.setVisibility(View.GONE);
                 profileFragmentProgressBar.setVisibility(View.GONE);
                 notAuthorizedPageId = Toodles.notAuthorizedPageContent(getActivity(), fragmentView,

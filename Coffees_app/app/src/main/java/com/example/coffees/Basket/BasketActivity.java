@@ -411,12 +411,11 @@ public class BasketActivity extends AppCompatActivity {
     private JSONArray addOrder() throws JSONException {
         JSONArray basketSender = new JSONArray();
         LinkedHashMap<Integer, Integer> products = BasketSender.products;
-        //Iterator it = products.entrySet().iterator();
         for (Map.Entry<Integer, Integer> pair : products.entrySet()){
             JSONObject productObj = new JSONObject();
 
-            productObj.put("count", pair.getKey());
-            productObj.put("product_id", pair.getValue());
+            productObj.put("product_id", pair.getKey());
+            productObj.put("count", pair.getValue());
 
             basketSender.put(productObj);
         }
