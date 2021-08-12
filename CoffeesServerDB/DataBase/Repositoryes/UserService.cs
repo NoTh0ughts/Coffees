@@ -7,9 +7,13 @@ using MongoDB.Driver.Linq;
 
 namespace CoffeesServerDB.DataBase.Entity.UserStuff
 {
+    
     public interface IMongoConfig { string ConnectionString { get; set; } }
     public class MongoConfig : IMongoConfig { public string ConnectionString { get; set; } }
     
+    /// <summary>
+    /// Заменяет репозиторий для данных из БД MongoDB
+    /// </summary>
     public class UserService
     {
         private readonly IMongoCollection<Order> _orders;

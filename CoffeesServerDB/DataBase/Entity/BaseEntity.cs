@@ -4,12 +4,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace CoffeesServerDB.DataBase.Entity
 {
-    public abstract class BaseEntity
-    {
-        [Key]
-        public int Id { get; set; }
-    }
-
+    /// <summary> Базовый класс сущности в MongoDB </summary>
     public abstract class BaseEntityMongo
     {
         [BsonElement("_id"), BsonId, BsonRepresentation(BsonType.ObjectId)]

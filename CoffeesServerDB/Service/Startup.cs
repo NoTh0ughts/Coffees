@@ -33,6 +33,9 @@ using MSubcategory = CoffeesServerDB.DataBase.Entity.ProductsMaria.Generated.Sub
 
 namespace CoffeesServerDB.Service
 {
+    /// <summary>
+    /// Выполняет настройку компонентов к DInj
+    /// </summary>
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -45,6 +48,8 @@ namespace CoffeesServerDB.Service
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
+            //Добавдяет конфигурацию Swagger (Автодокументация API)
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1",
@@ -68,6 +73,7 @@ namespace CoffeesServerDB.Service
             });
             
             
+            ///Настройка конфигурации работы с БД
             //Mongo
             services.Configure<MongoConfig>(Configuration.GetSection(nameof(MongoConfig)));
             services.AddSingleton<IMongoConfig>(isp => isp.GetRequiredService<IOptions<MongoConfig>>().Value);
@@ -132,7 +138,10 @@ namespace CoffeesServerDB.Service
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}"); 
+            });
         }
     }
     public static class ServiceExtensions 

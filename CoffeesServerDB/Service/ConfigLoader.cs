@@ -4,19 +4,31 @@ using Microsoft.Extensions.Configuration;
 
 namespace CoffeesServerDB.Service
 {
+    /// <summary>
+    /// Класс Helper, загружает конфигурацию БД из .env файла 
+    /// </summary>
     public static class ConfigLoader
     {
+        /// <summary> Строка подключения к MongoDb </summary>
         public static string MongoURL => _mongoURL       ??= ConfigureURLMongoDBFromEnviroment();
+        /// <summary> Строка подключения к MariaDB </summary>
         public static string MariaURL => _mariaURL       ??= ConfigureURLMariaDBFromEnviroment();
+        /// <summary> Строка подключения к PostgreSQL </summary>
         public static string PostgresUrl => _postgresURL ??= ConfigureURLPostgresFromEnviroment();
+        /// <summary> Строка подключения к Ms SQL </summary>
         public static string MssqlUrl => _mssqlURL       ??= ConfigureURLMSSQLFromEnviroment();
 
+        
         private static string _mongoURL;
         private static string _mariaURL;
         private static string _postgresURL;
         private static string _mssqlURL;        
         
-        
+        /// <summary>
+        /// Загружает данные из файла .env, добавляет все данные в переменные окружения
+        /// Данные должны быть в формате key = value
+        /// </summary>
+        /// <param name="filename"></param>
         public static void Load(string filename)
         {
             if(!File.Exists(filename))
@@ -29,11 +41,13 @@ namespace CoffeesServerDB.Service
             
             foreach (var line in lines)
             {
+                // Отделяем ключ и значение
                 var parts = line.Split('=', StringSplitOptions.RemoveEmptyEntries);
-
+                // Добавляем полученные значения в переменные окружения
                 if (parts.Length == 2) Environment.SetEnvironmentVariable(parts[0], parts[1]);
             }
 
+            // Строим конфиг
             new ConfigurationBuilder().AddEnvironmentVariables().Build();
         }
 

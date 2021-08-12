@@ -88,10 +88,7 @@ namespace CoffeesServerDB.DataBase.Entity
             {
                 if (disposing)
                 {
-                    // clear repositories
                     _repositories?.Clear();
-
-                    // dispose the db context.
                     DbContext.Dispose();
                 }
             }
