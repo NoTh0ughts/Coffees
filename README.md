@@ -1,5 +1,14 @@
-# Coffees
-Repository of different database managment systems
+<div id="MainTitle">
+
+# Клиент-серверное приложение
+
+</div>
+
+<div id="SubTitle"> 
+
+### Приложение для организации покупок сети кофеен
+
+</div>
 
 ## Команда
 1. Васильев Александр.
@@ -100,9 +109,15 @@ Repository of different database managment systems
 
    ![Coffees (1)](https://user-images.githubusercontent.com/66141673/121871016-4c663380-cd0c-11eb-93f4-ecad0fb42587.png)
 
-## Используемые библеотеки
-   - EntityFrameworkCore 5.0.6
-   - MongoDB.EntityFramework (provider)
-   - Npgsql.EntityFrameworkCore (provider)
-   - Pomelo.EntityFrameworkCore.MySql (provider)
-   - Swashbuckle.AspNetCore 6.1.4 (API documentation)
+## ## Технологический стек:
+
+<div id="TechStack">
+
+* ASP.NET Core
+* EF
+* MongoDB
+* PostgreSQL
+* MariaDB
+* MySQL
+
+</div>
